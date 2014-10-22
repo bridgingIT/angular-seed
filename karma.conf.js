@@ -11,23 +11,37 @@ module.exports = function(config){
       'app/view*/**/*.js'
     ],
 
+	preprocessors : {
+	  'app/components/**/*.js': 'coverage',
+	  'app/view*/**/*.js': 'coverage'
+	},
+
     autoWatch : true,
 
     frameworks: ['jasmine'],
 
     browsers : ['Chrome'],
 
+    reporters: ['junit', 'coverage'],
+
     plugins : [
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
-            'karma-junit-reporter'
+            'karma-junit-reporter',
+            'karma-coverage'
             ],
 
     junitReporter : {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
-    }
+    },
+
+	coverageReporter: {
+	   type: 'lcov',
+	   dir: 'coverage',
+	   subdir: '.'
+	},
 
   });
 };
