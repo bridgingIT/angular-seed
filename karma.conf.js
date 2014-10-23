@@ -22,7 +22,7 @@ module.exports = function(config){
 
     browsers : ['Chrome'],
 
-    reporters: ['junit', 'coverage'],
+    reporters: ['dots', 'junit', 'coverage'],
 
     plugins : [
             'karma-chrome-launcher',
