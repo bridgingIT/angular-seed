@@ -20,13 +20,14 @@ module.exports = function(config){
 
     frameworks: ['jasmine'],
 
-    browsers : ['Chrome'],
+    browsers : ['PhantomJS'],
 
     reporters: ['dots', 'junit', 'coverage'],
 
     plugins : [
             'karma-chrome-launcher',
             'karma-firefox-launcher',
+            'karma-phantomjs-launcher',
             'karma-jasmine',
             'karma-junit-reporter',
             'karma-coverage'
@@ -41,7 +42,7 @@ module.exports = function(config){
 	   type: 'lcov',
 	   dir: 'coverage',
 	   subdir: '.'
-	},
+	}
 
   });
 };
